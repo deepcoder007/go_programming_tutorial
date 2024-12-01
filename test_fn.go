@@ -3,7 +3,7 @@ package main
 import (
 	fmt "fmt"
     "os"
-    "hello-package/vib"
+    "go-programming-tutorial/vib"
 )
 
 
