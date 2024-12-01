@@ -1,11 +1,15 @@
 
-package lib
+package vib
 
-func fn(v int) {
+import (
+    "fmt"
+)
+
+func Fn(v int) {
 	fmt.Println("value of variable: ", v)
 }
 
-func incr_var(v *int) {
+func Incr_var(v *int) {
     *v += 100
 }
 

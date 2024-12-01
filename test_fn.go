@@ -3,8 +3,17 @@ package main
 import (
 	fmt "fmt"
     "os"
-    "Packages/lib"
+    "hello-package/vib"
 )
+
+
+func fn(v int) {
+    vib.Fn(v)
+}
+
+func incr_var(v *int) {
+    vib.Incr_var(v)
+}
 
 func main() {
 	fmt.Println("test function calls")
