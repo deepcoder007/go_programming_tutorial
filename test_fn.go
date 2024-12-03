@@ -3,7 +3,7 @@ package main
 import (
 	fmt "fmt"
     "os"
-    "go-programming-tutorial/vib"
+    "go_programming_tutorial/vib"
 )
 
 
@@ -21,7 +21,7 @@ func main() {
 	defer fn(2)
 	fn(3)
 	defer fn(4)
-	panic(" test panic")
+	// panic(" test panic")
 	fn(5)
 	defer fn(6)
     fmt.Println("--- ARGS ---- ")
