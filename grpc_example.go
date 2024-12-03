@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"os"
 
-	"go-grpc-examples/unary/greet/greetpb"
+	"go_programming_tutorial/greetpb"
 	"google.golang.org/grpc"
 )
 
