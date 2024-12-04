@@ -9,6 +9,7 @@ import (
 
 	greetpb "go_programming_tutorial/gen/pb-go/greetpb.greet"
 	"google.golang.org/grpc"
+	"github.com/redis/go-redis/v9"
 )
 
 type server struct{}
