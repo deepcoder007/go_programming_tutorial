@@ -18,7 +18,7 @@ func main() {
 
 	router.GET("/user/:name", func(c *gin.Context) {
 		name := c.Param("name")
-		fmt.Println("/user/: %s", name)
+		fmt.Println("/user/: ", name)
 		c.JSON(http.StatusOK, gin.H{
 			"message": "Hello " + name,
 		})
@@ -31,7 +31,7 @@ func main() {
 			Age int `json:"age" binding:"required"`
 		}
 
-		if err := c.ShoulBindJSON(&json); err != nil {
+		if err := c.ShouldBindJSON(&json); err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 			return
 		}
