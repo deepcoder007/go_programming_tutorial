@@ -18,12 +18,14 @@ func main() {
 
 	router.GET("/user/:name", func(c *gin.Context) {
 		name := c.Param("name")
+		fmt.Println("/user/: %s", name)
 		c.JSON(http.StatusOK, gin.H{
 			"message": "Hello " + name,
 		})
 	})
 
 	router.POST("/user", func(c *gin.Context) {
+		fmt.Println("/user")
 		var json struct {
 			Name string `json:"name" binding:"required"`
 			Age int `json:"age" binding:"required"`
