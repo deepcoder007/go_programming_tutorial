@@ -23,7 +23,16 @@ services:
       - 8222:8222
     networks:
       - custom_net
-
+  vib-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ls -lrth
+    depends_on:
+      - redis
+      - nats
+    networks:
+      - custom_net
 
 volumes:
   redis-data:
