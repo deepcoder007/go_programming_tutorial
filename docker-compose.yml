@@ -1,0 +1,38 @@
+# version: '3.0'
+
+services:
+  redis:
+    image: "redis/redis-stack:latest"
+    restart: unless-stopped
+    volumes:
+      - "redis-data:/data"
+    ports:
+      - "6379:6379"
+      - "8001:8001"
+    networks:
+      - custom_net
+
+  nats:
+    image: nats:latest
+    command: '-js -m 8222'
+    volumes:
+      - ./nats-data:/data
+    ports:
+      - 4222:4222
+      - 6222:6222
+      - 8222:8222
+    networks:
+      - custom_net
+
+
+volumes:
+  redis-data:
+  nats-data:
+
+networks:
+  custom_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.0.0.0/24
